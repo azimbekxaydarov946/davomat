@@ -108,10 +108,10 @@
                                         <select class="form-control" id="basicSelect" name="is_admin">
                                             <option value="0"
                                                 {{ isset($user) ? (!empty($user->is_admin == 0) ? 'selected' : '') : '' }}>
-                                                User</option>
+                                                Student</option>
                                             <option value="1"
                                                 {{ isset($user) ? (!empty($user->is_admin == 1) ? 'selected' : '') : '' }}>
-                                                Admin</option>
+                                                Teacher</option>
 
                                         </select>
                                         <span data-error="wrong" style="color: red;">{{ $errors->first('is_admin') }}</span>

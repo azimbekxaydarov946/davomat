@@ -15,11 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $data = Hash::make('!1234');
+        $data = Hash::make('1');
 
         User::create([
-            'firstname' => 'Administrator',
-            'phone' => '+998991234567',
+            'firstname' => 'Teacher',
+            'phone' => '1',
             'is_admin' => true,
             'password' => $data
         ]);

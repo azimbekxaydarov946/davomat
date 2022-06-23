@@ -33,8 +33,7 @@ class DayController extends Controller
     {
         $day = Day::find($id);
 
-        $foods = Food::get();
-        return view('form.day-form', ['day' => $day,'foods'=>$foods]);
+        return view('form.day-form', ['day' => $day]);
     }
     public function update(DayRequest $request, $id)
     {

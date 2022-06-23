@@ -31,24 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('dayUser/{id}', [UserDayController::class, 'delete'])->name('dayUserDestroySingle');
 
 
-    Route::get('users/{id}', [UserController::class, 'edit'])->name('userEdit');
     Route::put('users/{id}', [UserController::class, 'update'])->name('userUpdate');
+    Route::get('users/{id}', [UserController::class, 'edit'])->name('userEdit');
 
     Route::group([ 'middleware' => ['adminRole']], function () {
 
-        Route::resource('food', FoodController::class)->except('store', 'destroy', 'edit', 'update');
-        Route::delete('food/{id}', [FoodController::class, 'destroy'])->name('foodDestroy');
-        Route::post('food', [FoodController::class, 'store'])->name('foodStore');
-
-        Route::get('foods/{id}', [FoodController::class, 'edit'])->name('foodEdit');
-        Route::put('foods/{id}', [FoodController::class, 'update'])->name('foodUpdate');
-
-        // Route::resource('day', DayController::class)->except('store', 'destroy', 'edit', 'update');
-        // Route::delete('day/{id}', [DayController::class, 'destroy'])->name('dayDestroy');
-        // Route::post('day', [DayController::class, 'store'])->name('dayStore');
-
-        // Route::get('days/{id}', [DayController::class, 'edit'])->name('dayEdit');
-        // Route::put('days/{id}', [DayController::class, 'update'])->name('dayUpdate');
 
         Route::resource('dayUser', UserDayController::class)->except('store', 'destroy', 'edit', 'update');
 
@@ -62,11 +49,5 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('userss', [UserController::class, 'store'])->name('userStore');
         Route::delete('user/{id}', [UserController::class, 'destroy'])->name('userDestroy');
 
-        Route::get('payment', [PaymentController::class, 'index'])->name('payme.index');
-        Route::get('payment/create', [PaymentController::class, 'create'])->name('payme.create');
-        Route::post('payment/store', [PaymentController::class, 'store'])->name('payme.store');
-        Route::get('payment/edit/{id}', [PaymentController::class, 'edit'])->name('payme.edit');
-        Route::put('payment/update/{id}', [PaymentController::class, 'update'])->name('payme.update');
-        Route::delete('payment/delete/{id}', [PaymentController::class, 'delete'])->name('payme.delete');
     });
 });

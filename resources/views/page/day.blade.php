@@ -4,7 +4,7 @@
 @section('content')
     <div class="card">
         <div class="card-header d-flex align-items-center justify-content-center justify-content-md-between">
-            <h4 class="card-title">Tushliklar Ro'yxati</h4>
+            <h4 class="card-title">Davomat Ro'yxati</h4>
             <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter" >Qo'shish</button>
         </div>
         <div class="card-content">

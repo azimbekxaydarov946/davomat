@@ -35,7 +35,7 @@ class UserRequest extends FormRequest
             'firstname'=>['nullable'],
             'lastname'=>['nullable'],
             'department_id'=>['nullable'],
-            'phone'=>[$phone, 'string', 'min:13','max:13'],
+            'phone'=>[$phone, 'string'],
             'email'=>['nullable'],
             'email_verified_at'=>['nullable'],
             'password'=>['nullable'],

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Food\Food;
-use App\Models\Payment\Payment;
 use App\Models\User;
 use App\Models\UserDay\UserDay;
 use App\Services\Day\DayService;
@@ -17,13 +15,11 @@ class HomeController extends Controller
 
     protected UserDayService $UserDayService;
     protected DayService $dayService;
-    protected PaymentService $paymentService;
 
-    public function __construct(UserDayService $UserDayService, DayService $dayService, PaymentService $paymentService)
+    public function __construct(UserDayService $UserDayService, DayService $dayService)
     {
         $this->UserDayService = $UserDayService;
         $this->dayService = $dayService;
-        $this->paymentService = $paymentService;
     }
 
     public function index()
@@ -32,27 +28,20 @@ class HomeController extends Controller
 
         $filter = request()->input('filter');
         // $payment = $this->paymentService->get()->select('user_id' , 'amount');
-        $payments = DB::table('payments')->select(DB::raw('payments.user_id ,sum(payments.amount) as amount'))->where('debit_cost', 0);
         if ($filter) {
             $days = $this->dayService->get()->where('day', 'like', '%' . $filter . '%');
-           $payments = $payments->where('date', 'like', '%' . $filter . '%');
         } else {
             $filter = date('Y-m');
             $days = $this->dayService->get()->where('day', 'like', '%' . $filter . '%');
-            $payments = $payments->where('date', 'like', '%' . $filter . '%');
 
         }
-        $payments = $payments->groupBy('payments.user_id') ;
-        $sum = $payments->pluck('amount')->all();
 
 
-        $payments = $payments->get();
         $day_ids = $days->pluck('id');
         $days = $days->get();
         $today = date('Y-m-d') ?? '2022-01-01';
 
         $users = User::orderBy('id', 'asc')->get();
-        $foods = Food::get();
 
         $todays = $this->dayService->get()->where('day', 'like', '%' . $today . '%')->get() ;
         $now = $todays[0]->id ?? 0;
@@ -63,6 +52,6 @@ class HomeController extends Controller
 
         $todays = $this->UserDayService->get()->where('day_id',$now )->get();
 
-        return view('page.home', compact('days', 'users', 'user_days',  'todays','month','count_foods', 'payments',  'sum'));
+        return view('page.home', compact('days', 'users', 'user_days',  'todays','month','count_foods'));
     }
 }

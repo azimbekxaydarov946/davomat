@@ -37,7 +37,7 @@
                                     {{-- <td>{{ $user->email }}</td> --}}
                                     <td>{{ $user->phone }}</td>
                                     {{-- <td >{{ $user->password }}</td> --}}
-                                    <td>{{ $user->is_admin == false ? 'user' : 'admin' }}</td>
+                                    <td>{{ $user->is_admin == false ? 'Student' : 'Teacher' }}</td>
                                     <td class="d-flex justify-content-between">
                                         <form action="{{ route('userEdit', ['id' => $user->id]) }}" method="get">
                                             @method('get')

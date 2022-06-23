@@ -4,7 +4,7 @@
 @section('content')
     <div class="card">
         <div class="card-header d-flex align-items-center justify-content-center justify-content-md-between">
-            <h4 class="card-title">Tushlik qilganlar Ro'yxati</h4>
+            <h4 class="card-title">Davomat qilganlar Ro'yxati</h4>
             <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#userday">Qo'shish</button>
         </div>
         <div class="card-content">

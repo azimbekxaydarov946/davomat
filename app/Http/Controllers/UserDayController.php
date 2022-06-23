@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserDayRequest;
 use App\Models\Day\Day;
-use App\Models\Food\Food;
 use App\Models\User;
 use App\Models\UserDay\UserDay;
 use App\Services\UserDay\UserDayService;
@@ -38,8 +37,7 @@ class UserDayController extends Controller
         $userday = UserDay::find($id);
         $days = Day::get();
         $users = User::where('is_admin', '!=', '1')->get();
-        $foods = Food::get();
-        return view('form.userday-from', ['days' => $days, 'foods' => $foods,'users'=>$users,'userday'=>$userday]);
+        return view('form.userday-from', ['days' => $days,'users'=>$users,'userday'=>$userday]);
     }
     public function update(UserDayRequest $request, $id)
     {

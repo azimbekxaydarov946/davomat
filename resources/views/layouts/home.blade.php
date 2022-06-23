@@ -6,7 +6,7 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
- <title>Tushlik</title>
+ <title>Davomat</title>
  <link rel="apple-touch-icon" href="{{ asset('app-assets/images/ico/apple-icon-120.png') }}">
  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.ico') }}">
  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -51,14 +51,15 @@
 
 <body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
 
- <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav navbar-dark navbar-shadow" style="width: 96.6%">
-  <div class="navbar-wrapper">
-   <div class="navbar-container content ">
-    <div class="navbar-collapse d-flex" id="navbar-mobile">
-     <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
-      <ul class="nav navbar-nav">
-       <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon feather icon-menu"></i></a></li>
-      </ul>
+ <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav navbar-dark navbar-shadow" style="width: 95.5%">
+    <div class="navbar-wrapper">
+        <div class="navbar-container content ">
+            <div class="navbar-collapse d-flex" id="navbar-mobile">
+                <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                    <ul class="nav navbar-nav">
+                        <a href="/"><span class="menu-title" data-i18n="Email"> <h3>Home</span></h3></a>
+                   <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon feather icon-menu"></i></a></li>
+                </ul>
       <ul class="nav navbar-nav bookmark-icons d-none">
        <!-- li.nav-item.mobile-menu.d-xl-none.mr-auto-->
        <!--   a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')-->
@@ -291,7 +292,6 @@
    <div class="content-body">
     @yield('content')
     @livewire('components.day-model')
-    @livewire('components.food-model')
     @livewire('components.user-day')
 
    </div>

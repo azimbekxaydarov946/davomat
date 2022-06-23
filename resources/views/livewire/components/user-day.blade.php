@@ -6,7 +6,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel17">Tushlik qo'shish</h4>
+                    <h4 class="modal-title" id="myModalLabel17">Qo'shish</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -25,14 +25,6 @@
                                     @endif
 
                                     @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select name="food_id" id="" class="form-control" required>
-                                <option disabled selected>Taomlar</option>
-                                @foreach($foods as $food)
-                                    <option value="{{$food->id}}"> {{$food->name}}</option>
-                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">

@@ -13,10 +13,6 @@ class UserDay extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function food()
-    {
-        return $this->belongsTo(Food::class);
-    }
 
     public function day()
     {
