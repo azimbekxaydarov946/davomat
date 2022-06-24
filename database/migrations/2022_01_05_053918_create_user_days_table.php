@@ -17,8 +17,6 @@ class CreateUserDaysTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('day_id');
-            $table->boolean('is_pay')->default(false);
-            $table->boolean('yegan_yemagan')->default(false);
             $table->timestamps();
         });
     }
