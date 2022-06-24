@@ -31,7 +31,7 @@
                                             $value = date('Y') . '-' . str_pad($i, 2, '0', STR_PAD_LEFT);
 
                                         @endphp
-                                        <option @if ($fil == $value) {{ 'selected' }} @endif
+                                        <option @if ($fil == $value || $value==date('Y-m')) {{ 'selected' }} @endif
                                             value="{{ $value }}"> @php
 
                                             @endphp {{ $month[$i] }}</option>
