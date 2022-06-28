@@ -1,4 +1,4 @@
-# Havomat
+# Davomat
 
 <h3><b>Requirements:</b></h3><br/>
     
@@ -14,7 +14,7 @@
 
 <code>copy .env.example to .env</code>
 
-<code>creae db</code>
+<code>create db</code>
 
 <code>write db credentials to .env file</code>
 
