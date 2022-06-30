@@ -4,8 +4,6 @@ namespace App\Services;
 class Service
 {
     protected $repository;
-
-
     public function get( $relation = null)
     {
         return $this->repository->query($relation);

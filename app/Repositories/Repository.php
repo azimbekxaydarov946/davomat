@@ -7,7 +7,6 @@ class Repository
 {
 
     protected $model;
-
     public function query($relation = null)
     {
         if($relation){
@@ -15,12 +14,10 @@ class Repository
         }
         return $this->model->query();
     }
-
     public function store($params)
     {
         return $this->model->create($params);
     }
-
     public function update($id, $params)
     {
         $model = $this->query();
@@ -28,13 +25,11 @@ class Repository
         $model->update($params);
         return $model;
     }
-
     public function show($id,  $relation = null)
     {
         $model = $this->query($relation);
         return $model->find($id);
     }
-
     public function destroy($id)
     {
         $model = $this->query();
